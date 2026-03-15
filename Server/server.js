@@ -10,8 +10,9 @@ const PORT = process.env.PORT || 3000;
 
 await connectDB ()
 
-app.use("/api/templates", templateRoutes)
-app.use(cors())
+app.use(express.json());
+app.use("/api/templates", templateRoutes);
+app.use(cors());
 
 app.get("/", (req, res)=>{
     res.send("server is running ");

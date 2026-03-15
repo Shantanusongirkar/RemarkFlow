@@ -1,8 +1,12 @@
 import React from 'react'
+import Navbar from '../Components/Navbar'
 
 const MasterTracker = () => {
   return (
-    <div>MasterTracker</div>
+    <>
+      <Navbar />
+      <div>MasterTracker</div>
+    </>
   )
 }
 
