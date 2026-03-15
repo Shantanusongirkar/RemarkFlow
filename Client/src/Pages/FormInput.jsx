@@ -1,6 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../Components/Navbar';
 
 // Pure function – easy to test and reuse
 const generateRemark = (values) => {
@@ -26,12 +27,13 @@ const FormInput = () => {
   
 const navigate = useNavigate();
   return (
-    // Minimal layout: two columns side by side on large screens
-    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', padding: '2rem' }}>
-      {/* Left Column: Form */}
-      <div>
-        <h2>Salary Remark Generator</h2>
-        <form>
+    <>
+      <Navbar />
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', padding: '2rem' }}>
+        {/* Left Column: Form */}
+        <div>
+          <h2>Salary Remark Generator</h2>
+          <form>
           <div>
             <label>LOS Number: </label>
             <input {...register('losNumber')} placeholder="e.g. 123456" />
@@ -84,6 +86,7 @@ const navigate = useNavigate();
         </button>
       </div>
     </div>
+    </>
   );
 };
 
