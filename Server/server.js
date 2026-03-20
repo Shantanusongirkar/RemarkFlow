@@ -4,6 +4,7 @@ import cors from "cors";
 import "dotenv/config";
 import connectDB from './configs/db.js';
 import reportRoutes from './routes/report.route.js';
+import authRoutes from './routes/auth.route.js';
 
 
 const app = express ();
@@ -15,6 +16,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/templates", templateRoutes);
 app.use("/api/report", reportRoutes);
+app.use("/api/auth", authRoutes);
 
 
 app.get("/", (req, res)=>{
