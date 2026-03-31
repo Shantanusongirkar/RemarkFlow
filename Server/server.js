@@ -5,7 +5,10 @@ import "dotenv/config";
 import connectDB from './configs/db.js';
 import reportRoutes from './routes/report.route.js';
 import authRoutes from './routes/auth.route.js';
+import dns from 'dns';
 
+//change dns
+dns.setServers(["1.1.1.1","8.8.8.8"]);
 
 const app = express ();
 const PORT = process.env.PORT || 3000; 
